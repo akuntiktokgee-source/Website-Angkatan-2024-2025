@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Resmi Angkatan</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #f4f6f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #1e3a8a;
+            color: white;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        nav ul li {
+            margin-left: 2rem;
+        }
+        .hero {
+            background: linear-gradient(rgba(30, 58, 138, 0.8), rgba(30, 58, 138, 0.8)), url('https://via.placeholder.com/1200x400') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 5rem 1rem;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        section {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        section h2 {
+            color: #1e3a8a;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+        .rules-list {
+            padding-left: 1.5rem;
+        }
+        .rules-list li {
+            margin-bottom: 0.5rem;
+        }
+        .student-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .student-card {
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            overflow: hidden;
+            text-align: center;
+        }
+        .student-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: #ddd;
+        }
+        .student-info {
+            padding: 1rem;
+        }
+        footer {
+            background-color: #111827;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">ANGKATAN 2024-2025</div>
+        </div>
+    </header>
+
+    <div class="hero">
+        <h1>Selamat Datang di Website Kelas Kami</h1>
+        <p>Ruang Digital Kebersamaan, Aturan, dan Memori Angkatan</p>
+    </div>
+
+    <div class="container">
+        <section>
+            <h2>Informasi Angkatan</h2>
+            <p><strong>Wali Kelas:</strong> [Nama Guru Wali Kelas]</p>
+            <p><strong>Tahun Ajaran:</strong> 2024 - 2025</p>
+        </section>
+
+        <section>
+            <h2>Aturan & Tata Tertib Kelas</h2>
+            <ol class="rules-list">
+                <li>Hadir di kelas tepat waktu sebelum bel berbunyi.</li>
+                <li>Menggunakan seragam sekolah yang rapi dan lengkap.</li>
+                <li>Dilarang menggunakan HP saat jam pelajaran tanpa izin guru.</li>
+                <li>Menjaga kebersihan dan ketertiban kelas bersama-sama.</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>Daftar & Foto Murid</h2>
+            <div class="student-grid">
+                <!-- Contoh Kartu Murid 1 -->
+                <div class="student-card">
+                    <img src="https://via.placeholder.com/200x200" alt="Foto">
+                    <div class="student-info">
+                        <h3>Nama Murid 1</h3>
+                        <p>Jabatan / Absen</p>
+                    </div>
+                </div>
+                <!-- Contoh Kartu Murid 2 -->
+                <div class="student-card">
+                    <img src="https://via.placeholder.com/200x200" alt="Foto">
+                    <div class="student-info">
+                        <h3>Nama Murid 2</h3>
+                        <p>Jabatan / Absen</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Angkatan 2024-2025. All Rights Reserved.</p>
+    </footer>
+
+</body>
+  </html>
+  
