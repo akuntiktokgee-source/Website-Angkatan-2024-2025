@@ -19,51 +19,26 @@
         header {
             background-color: #1e3a8a;
             color: white;
-            padding: 1rem 2rem;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-        nav ul li {
-            margin-left: 2rem;
-        }
-        .hero {
-            background: linear-gradient(rgba(30, 58, 138, 0.8), rgba(30, 58, 138, 0.8)), url('https://via.placeholder.com/1200x400') no-repeat center center/cover;
-            color: white;
+            padding: 2rem 1rem;
             text-align: center;
-            padding: 5rem 1rem;
         }
-        .container {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 1rem;
+        header h1 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
         }
         section {
+            padding: 2rem 1rem;
+            max-width: 800px;
+            margin: 0 auto;
             background: white;
-            padding: 2rem;
-            margin-bottom: 2rem;
+            margin-top: 1rem;
             border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
         section h2 {
             color: #1e3a8a;
             margin-bottom: 1rem;
-            border-bottom: 2px solid #e2e8f0;
+            border-bottom: 2px solid #e5e7eb;
             padding-bottom: 0.5rem;
         }
         .rules-list {
@@ -74,92 +49,110 @@
         }
         .student-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1.5rem;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 1rem;
         }
         .student-card {
-            background: #fff;
-            border: 1px solid #e2e8f0;
+            background: #f9fafb;
             border-radius: 8px;
             overflow: hidden;
             text-align: center;
+            border: 1px solid #e5e7eb;
         }
         .student-card img {
             width: 100%;
-            height: 200px;
+            height: 150px;
             object-fit: cover;
-            background-color: #ddd;
         }
         .student-info {
-            padding: 1rem;
+            padding: 0.5rem;
+        }
+        .student-info h3 {
+            font-size: 1rem;
+            color: #111827;
+        }
+        .student-info p {
+            font-size: 0.85rem;
+            color: #6b7280;
         }
         footer {
             background-color: #111827;
             color: white;
             text-align: center;
             padding: 1.5rem;
-            margin-top: 3rem;
+            margin-top: 2rem;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="nav-container">
-            <div class="logo">ANGKATAN 2024-2025</div>
-        </div>
+        <h1>ANGKATAN 2024-2025</h1>
+        <p>Website Resmi, Profil Dan Aturan</p>
     </header>
 
-    <div class="hero">
-        <h1>Selamat Datang di Website Kelas Kami</h1>
-        <p>Ruang Digital Kebersamaan, Aturan, dan Memori Angkatan</p>
-    </div>
+    <section>
+        <h2>Tahun Ajaran</h2>
+        <p><strong>Tahun Ajaran:</strong> 2024-2025</p>
+    </section>
 
-    <div class="container">
-        <section>
-            <h2>Informasi Angkatan</h2>
-            <p><strong>Wali Kelas:</strong> [Nama Guru Wali Kelas]</p>
-            <p><strong>Tahun Ajaran:</strong> 2024 - 2025</p>
-        </section>
+    <section>
+        <h2>Aturan & Tata Tertib Kelas</h2>
+        <ol class="rules-list">
+            <li>Hadir di kelas tepat waktu sebelum bel berbunyi.</li>
+            <li>Menggunakan seragam sekolah yang rapi dan sesuai hari.</li>
+            <li>Dilarang menggunakan HP saat jam pelajaran tanpa izin guru.</li>
+            <li>Menjaga kebersihan dan ketertiban kelas bersama.</li>
+        </ol>
+    </section>
 
-        <section>
-            <h2>Aturan & Tata Tertib Kelas</h2>
-            <ol class="rules-list">
-                <li>Hadir di kelas tepat waktu sebelum bel berbunyi.</li>
-                <li>Menggunakan seragam sekolah yang rapi dan lengkap.</li>
-                <li>Dilarang menggunakan HP saat jam pelajaran tanpa izin guru.</li>
-                <li>Menjaga kebersihan dan ketertiban kelas bersama-sama.</li>
-            </ol>
-        </section>
+    <section>
+        <h2>Daftar & Foto Murid</h2>
+        <div class="student-grid">
 
-        <section>
-            <h2>Daftar & Foto Murid</h2>
-            <div class="student-grid">
-                <!-- Contoh Kartu Murid 1 -->
-                <div class="student-card">
-                    <img src="https://via.placeholder.com/200x200" alt="Foto">
-                    <div class="student-info">
-                        <h3>Nama Murid 1</h3>
-                        <p>Jabatan / Absen</p>
-                    </div>
-                </div>
-                <!-- Contoh Kartu Murid 2 -->
-                <div class="student-card">
-                    <img src="https://via.placeholder.com/200x200" alt="Foto">
-                    <div class="student-info">
-                        <h3>Nama Murid 2</h3>
-                        <p>Jabatan / Absen</p>
-                    </div>
+            <!-- KARTU MURID 1: KETUA KELAS -->
+            <div class="student-card">
+                <img src="ketua-kelas.jpg..jpg" alt="Foto Fauzi">
+                <div class="student-info">
+                    <h3>Fauzi</h3>
+                    <p>Ketua Kelas</p>
                 </div>
             </div>
-        </section>
-    </div>
+
+            <!-- KARTU MURID 2: WAKIL KETUA -->
+            <div class="student-card">
+                <img src="https://via.placeholder.com/200x200" alt="Foto">
+                <div class="student-info">
+                    <h3>Nama Wakil</h3>
+                    <p>Wakil Ketua</p>
+                </div>
+            </div>
+
+            <!-- KARTU MURID 3: SEKRETARIS -->
+            <div class="student-card">
+                <img src="https://via.placeholder.com/200x200" alt="Foto">
+                <div class="student-info">
+                    <h3>Nama Sekretaris</h3>
+                    <p>Sekretaris</p>
+                </div>
+            </div>
+
+            <!-- KARTU MURID 4: BENDAHARA -->
+            <div class="student-card">
+                <img src="https://via.placeholder.com/200x200" alt="Foto">
+                <div class="student-info">
+                    <h3>Nama Bendahara</h3>
+                    <p>Bendahara</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
 
     <footer>
         <p>&copy; 2026 Angkatan 2024-2025. All Rights Reserved.</p>
     </footer>
 
 </body>
-  </html>
-  
+</html>
