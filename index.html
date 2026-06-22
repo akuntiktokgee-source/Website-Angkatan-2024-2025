@@ -12,6 +12,60 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
+        /* --- KODE ANIMASI LOADING SCREEN LALU MENGHILANG --- */
+        #loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: #0f172a;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            /* Efek menghilang otomatis setelah 3 detik */
+            animation: hilangkanLoading 0.5s ease-forward 2.5s forwards;
+        }
+
+        .loading-text {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #3b82f6;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            text-shadow: 0 0 15px rgba(59, 130, 246, 0.7);
+            /* Animasi teks berkedip estetik */
+            animation: teksKedip 1.5s ease-in-out infinite alternate;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(59, 130, 246, 0.1);
+            border-top: 5px solid #3b82f6;
+            border-radius: 50%;
+            animation: putarSpinner 1s linear infinite;
+        }
+
+        @keyframes putarSpinner {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes teksKedip {
+            0% { opacity: 0.3; transform: scale(0.98); }
+            100% { opacity: 1; transform: scale(1.02); }
+        }
+
+        @keyframes hilangkanLoading {
+            0% { opacity: 1; pointer-events: all; }
+            100% { opacity: 0; pointer-events: none; visibility: hidden; }
+        }
+        /* --------------------------------------------------- */
+
         /* Efek Latar Belakang Aurora Bergerak Otomatis */
         body {
             background: linear-gradient(-45deg, #0f172a, #1e1b4b, #1e3a8a, #0369a1, #134e5e);
@@ -22,7 +76,6 @@
             padding-bottom: 4rem;
         }
 
-        /* Mesin Penggerak Animasi */
         @keyframes auroraBackground {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
@@ -78,7 +131,6 @@
             letter-spacing: 0.5px;
         }
 
-        /* Desain Struktur Papan Aturan */
         .info-box {
             display: grid;
             grid-template-columns: 1fr;
@@ -106,7 +158,6 @@
         .text-red { color: #f87171; font-weight: bold; }
         .text-green { color: #34d399; font-weight: bold; }
 
-        /* Desain Grid Pengurus & Murid */
         .student-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
@@ -149,7 +200,6 @@
             margin-top: 2px;
         }
 
-        /* Penyelarasan Kotak Khusus */
         .center-box {
             display: flex;
             justify-content: center;
@@ -164,7 +214,6 @@
             border: 2px solid #3b82f6 !important;
         }
 
-        /* Tabel Jadwal Piket */
         .table-responsive {
             overflow-x: auto;
             border-radius: 8px;
@@ -211,6 +260,12 @@
 </head>
 <body>
 
+    <!-- KOTAK ANIMASI LOADING (AKAN MUNCUL DULUAN 2.5 DETIK) -->
+    <div id="loading-screen">
+        <div class="loading-text">Welcome To Our Class</div>
+        <div class="spinner"></div>
+    </div>
+
     <header>
         <h1>ANGKATAN 2024-2025</h1>
         <p>Website Resmi & Pusat Informasi Anggota Kelas</p>
@@ -218,7 +273,7 @@
 
     <div class="container">
 
-        <!-- SECTION 1: PAPAN ATURAN & LARANGAN -->
+        <!-- SECTION 1: PAPAN ATURAN -->
         <section>
             <h2>Papan Regulasi & Tata Tertib</h2>
             <div class="info-box">
@@ -249,7 +304,6 @@
         <section>
             <h2>Struktur Pengurus Kelas</h2>
             
-            <!-- Wali Kelas -->
             <div class="center-box">
                 <div class="student-card highlight-card">
                     <img src="wali-kelas.jpg" alt="Foto Wali Kelas">
@@ -260,9 +314,7 @@
                 </div>
             </div>
 
-            <!-- Grid Pengurus -->
             <div class="student-grid">
-                <!-- KETUA KELAS -->
                 <div class="student-card leader-card">
                     <img src="ketua-kelas.jpg..jpg" alt="Foto Gora">
                     <div class="student-info">
@@ -271,7 +323,6 @@
                     </div>
                 </div>
 
-                <!-- WAKIL KETUA -->
                 <div class="student-card">
                     <img src="wakil.jpg" alt="Foto Wakil">
                     <div class="student-info">
@@ -280,7 +331,6 @@
                     </div>
                 </div>
 
-                <!-- SEKRETARIS 1 -->
                 <div class="student-card">
                     <img src="sekretaris1.jpg" alt="Foto">
                     <div class="student-info">
@@ -289,7 +339,6 @@
                     </div>
                 </div>
 
-                <!-- SEKRETARIS 2 -->
                 <div class="student-card">
                     <img src="sekretaris2.jpg" alt="Foto">
                     <div class="student-info">
@@ -298,7 +347,6 @@
                     </div>
                 </div>
 
-                <!-- BENDAHARA 1 -->
                 <div class="student-card">
                     <img src="bendahara1.jpg" alt="Foto">
                     <div class="student-info">
@@ -307,7 +355,6 @@
                     </div>
                 </div>
 
-                <!-- BENDAHARA 2 -->
                 <div class="student-card">
                     <img src="bendahara2.jpg" alt="Foto">
                     <div class="student-info">
@@ -318,7 +365,7 @@
             </div>
         </section>
 
-        <!-- SECTION 3: JADWAL PIKET (33 ORANG ACAK) -->
+        <!-- SECTION 3: JADWAL PIKET -->
         <section>
             <h2>Jadwal Piket Kebersihan Kelas</h2>
             <div class="table-responsive">
@@ -345,7 +392,7 @@
             </div>
         </section>
 
-        <!-- SECTION 4: DAFTAR SELURUH MURID (33 ORANG) -->
+        <!-- SECTION 4: DAFTAR SELURUH MURID -->
         <section>
             <h2>Daftar Anggota Kelas (33 Murid)</h2>
             <div class="student-grid">
