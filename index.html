@@ -12,16 +12,17 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
-        /* Efek Latar Belakang Aurora Bergerak */
+        /* Efek Latar Belakang Aurora Bergerak Otomatis */
         body {
             background: linear-gradient(-45deg, #0f172a, #1e1b4b, #1e3a8a, #0369a1, #134e5e);
             background-size: 400% 400%;
-            animation: auroraBackground 20s ease infinite;
+            animation: auroraBackground 15s ease infinite;
             color: #f8fafc;
             line-height: 1.6;
             padding-bottom: 4rem;
         }
 
+        /* Mesin Penggerak Animasi */
         @keyframes auroraBackground {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
@@ -45,10 +46,16 @@
         }
 
         header h1 {
-            font-size: 2.5rem;
+            font-size: 2.3rem;
             color: #3b82f6;
-            text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+            text-shadow: 0 0 12px rgba(59, 130, 246, 0.6);
             margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            font-size: 1rem;
+            color: #94a3b8;
         }
 
         section {
@@ -66,9 +73,38 @@
             margin-bottom: 1.5rem;
             border-bottom: 2px solid rgba(59, 130, 246, 0.4);
             padding-bottom: 0.5rem;
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
+
+        /* Desain Struktur Papan Aturan */
+        .info-box {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        @media (min-width: 768px) {
+            .info-box { grid-template-columns: 1fr 1fr; }
+        }
+
+        .card-aturan {
+            background: rgba(15, 23, 42, 0.5);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .list-style {
+            padding-left: 1.2rem;
+        }
+        .list-style li {
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
+            color: #cbd5e1;
+        }
+        .text-red { color: #f87171; font-weight: bold; }
+        .text-green { color: #34d399; font-weight: bold; }
 
         /* Desain Grid Pengurus & Murid */
         .student-grid {
@@ -84,12 +120,7 @@
             overflow: hidden;
             text-align: center;
             border: 1px solid rgba(255,255,255,0.05);
-            transition: transform 0.3s ease;
-        }
-
-        .student-card:hover {
-            transform: translateY(-5px);
-            border-color: #3b82f6;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
         .student-card img {
@@ -115,51 +146,38 @@
             font-size: 0.8rem;
             color: #3b82f6;
             font-weight: bold;
+            margin-top: 2px;
         }
 
-        /* Khusus Kartu Guru/Wali Kelas & Ketua */
+        /* Penyelarasan Kotak Khusus */
+        .center-box {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin-bottom: 1.5rem;
+        }
         .highlight-card {
-            max-width: 200px;
-            margin: 0 auto 1.5rem auto;
+            width: 160px;
             border: 2px solid #10b981 !important;
         }
         .leader-card {
             border: 2px solid #3b82f6 !important;
         }
 
-        /* Desain Aturan & Syarat */
-        .info-box {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 20px;
-        }
-        @media (min-width: 768px) {
-            .info-box { grid-template-columns: 1fr 1fr; }
-        }
-
-        .list-style {
-            padding-left: 1.2rem;
-        }
-        .list-style li {
-            margin-bottom: 0.6rem;
-            font-size: 0.95rem;
-        }
-        .text-red { color: #f87171; }
-        .text-green { color: #34d399; }
-
         /* Tabel Jadwal Piket */
         .table-responsive {
             overflow-x: auto;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.1);
         }
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 1rem;
             background: rgba(15, 23, 42, 0.5);
         }
         th, td {
             border: 1px solid rgba(255,255,255,0.1);
-            padding: 12px;
+            padding: 14px 10px;
             text-align: center;
             font-size: 0.9rem;
             vertical-align: top;
@@ -167,6 +185,14 @@
         th {
             background-color: #1e3a8a;
             color: #fff;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+        }
+        td {
+            color: #cbd5e1;
+            line-height: 1.8;
         }
         tr:nth-child(even) td {
             background: rgba(255,255,255,0.02);
@@ -178,7 +204,8 @@
             margin-top: 4rem;
             background: rgba(15, 23, 42, 0.9);
             border-top: 1px solid rgba(255,255,255,0.1);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
+            color: #64748b;
         }
     </style>
 </head>
@@ -191,11 +218,12 @@
 
     <div class="container">
 
+        <!-- SECTION 1: PAPAN ATURAN & LARANGAN -->
         <section>
             <h2>Papan Regulasi & Tata Tertib</h2>
             <div class="info-box">
-                <div>
-                    <h3 class="text-green" style="margin-bottom:0.5rem;">✅ Syarat & Aturan Siswa</h3>
+                <div class="card-aturan">
+                    <h3 class="text-green" style="margin-bottom:0.8rem;">✅ Syarat & Aturan Siswa</h3>
                     <ul class="list-style">
                         <li>Hadir di ruang kelas selambat-lambatnya 10 menit sebelum bel masuk.</li>
                         <li>Membawa buku pelajaran dan alat tulis sesuai jadwal harian.</li>
@@ -204,11 +232,11 @@
                         <li>Wajib berpartisipasi menjaga fasilitas dan kebersihan kelas.</li>
                     </ul>
                 </div>
-                <div>
-                    <h3 class="text-red" style="margin-bottom:0.5rem;">❌ Larangan Keras</h3>
+                <div class="card-aturan">
+                    <h3 class="text-red" style="margin-bottom:0.8rem;">❌ Larangan Keras</h3>
                     <ul class="list-style">
-                        <li>Dilarang bermain HP atau bersosmed saat jam pelajaran tanpa seizin guru pengajar.</li>
-                        <li>Dilarang membuang sampah sembarangan (di laci meja/lantai kelas).</li>
+                        <li>Dilarang bermain HP atau bersosmed saat jam pelajaran tanpa seizin guru.</li>
+                        <li>Dilarang membuang sampah sembarangan di laci meja atau lantai kelas.</li>
                         <li>Dilarang membuat kegaduhan atau berisik saat guru menjelaskan materi.</li>
                         <li>Dilarang meninggalkan area kelas tanpa izin saat jam sekolah berlangsung.</li>
                         <li>Dilarang merusak sarana kelas (mencoret meja, kursi, atau tembok).</li>
@@ -217,18 +245,24 @@
             </div>
         </section>
 
+        <!-- SECTION 2: STRUKTUR ORGANISASI -->
         <section>
             <h2>Struktur Pengurus Kelas</h2>
             
-            <div class="student-card highlight-card">
-                <img src="wali-kelas.jpg" alt="Foto Wali Kelas">
-                <div class="student-info">
-                    <h3>Nama Wali Kelas</h3>
-                    <p style="color: #10b981;">Wali Kelas</p>
+            <!-- Wali Kelas -->
+            <div class="center-box">
+                <div class="student-card highlight-card">
+                    <img src="wali-kelas.jpg" alt="Foto Wali Kelas">
+                    <div class="student-info">
+                        <h3>Nama Wali Kelas</h3>
+                        <p style="color: #10b981;">Wali Kelas</p>
+                    </div>
                 </div>
             </div>
 
-            <div class="student-grid" style="justify-content: center;">
+            <!-- Grid Pengurus -->
+            <div class="student-grid">
+                <!-- KETUA KELAS -->
                 <div class="student-card leader-card">
                     <img src="ketua-kelas.jpg..jpg" alt="Foto Gora">
                     <div class="student-info">
@@ -237,6 +271,7 @@
                     </div>
                 </div>
 
+                <!-- WAKIL KETUA -->
                 <div class="student-card">
                     <img src="wakil.jpg" alt="Foto Wakil">
                     <div class="student-info">
@@ -245,6 +280,7 @@
                     </div>
                 </div>
 
+                <!-- SEKRETARIS 1 -->
                 <div class="student-card">
                     <img src="sekretaris1.jpg" alt="Foto">
                     <div class="student-info">
@@ -253,6 +289,7 @@
                     </div>
                 </div>
 
+                <!-- SEKRETARIS 2 -->
                 <div class="student-card">
                     <img src="sekretaris2.jpg" alt="Foto">
                     <div class="student-info">
@@ -261,6 +298,7 @@
                     </div>
                 </div>
 
+                <!-- BENDAHARA 1 -->
                 <div class="student-card">
                     <img src="bendahara1.jpg" alt="Foto">
                     <div class="student-info">
@@ -269,6 +307,7 @@
                     </div>
                 </div>
 
+                <!-- BENDAHARA 2 -->
                 <div class="student-card">
                     <img src="bendahara2.jpg" alt="Foto">
                     <div class="student-info">
@@ -279,6 +318,7 @@
             </div>
         </section>
 
+        <!-- SECTION 3: JADWAL PIKET (33 ORANG ACAK) -->
         <section>
             <h2>Jadwal Piket Kebersihan Kelas</h2>
             <div class="table-responsive">
@@ -305,6 +345,7 @@
             </div>
         </section>
 
+        <!-- SECTION 4: DAFTAR SELURUH MURID (33 ORANG) -->
         <section>
             <h2>Daftar Anggota Kelas (33 Murid)</h2>
             <div class="student-grid">
