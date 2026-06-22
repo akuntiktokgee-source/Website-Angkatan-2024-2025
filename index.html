@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Resmi Angkatan</title>
+    <title>Website Resmi Kelas - Angkatan 2024-2025</title>
     <style>
         * {
             margin: 0;
@@ -11,92 +11,143 @@
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
+        
+        /* Efek Latar Belakang Aurora Bergerak */
         body {
-            [https://akuntiktokgee-source.github.io/Website-Angkatan-2024-2025/](https://akuntiktokgee-source.github.io/Website-Angkatan-2024-2025/)
+            background: linear-gradient(-45deg, #0f172a, #1e1b4b, #1e3a8a, #0369a1, #134e5e);
+            background-size: 400% 400%;
+            animation: auroraBackground 20s ease infinite;
+            color: #f8fafc;
+            line-height: 1.6;
+            padding-bottom: 4rem;
         }
-        header {
-            background-color: #1e3a8a;
-            color: white;
-            padding: 3rem 1rem;
-            text-align: center;
-            border-bottom: 5px solid #3b82f6;
+
+        @keyframes auroraBackground {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
-        header h1 {
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        header p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
+
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 0 1rem;
         }
+
+        header {
+            text-align: center;
+            padding: 4rem 1rem 3rem 1rem;
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(10px);
+            border-bottom: 3px solid #3b82f6;
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            color: #3b82f6;
+            text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+            margin-bottom: 0.5rem;
+        }
+
         section {
             padding: 2rem;
-            background: white;
-            margin-top: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(8px);
+            margin-top: 2.5rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
         }
+
         section h2 {
-            color: #1e3a8a;
+            color: #3b82f6;
             margin-bottom: 1.5rem;
-            border-bottom: 3px solid #3b82f6;
+            border-bottom: 2px solid rgba(59, 130, 246, 0.4);
             padding-bottom: 0.5rem;
-            font-size: 1.5rem;
+            font-size: 1.6rem;
+            text-transform: uppercase;
         }
-        /* Tata Tertib */
-        .rules-list {
-            padding-left: 1.5rem;
-        }
-        .rules-list li {
-            margin-bottom: 0.8rem;
-            font-size: 1rem;
-        }
-        /* Grid Struktur Organisasi */
-        .teacher-box {
-            max-width: 220px;
-            margin: 0 auto 2rem auto;
-        }
+
+        /* Desain Grid Pengurus & Murid */
         .student-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-            gap: 20px;
-            justify-content: center;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 15px;
+            margin-top: 1rem;
         }
+
         .student-card {
-            background: #ffffff;
-            border-radius: 10px;
+            background: rgba(15, 23, 42, 0.8);
+            border-radius: 12px;
             overflow: hidden;
             text-align: center;
-            border: 1px solid #e5e7eb;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: transform 0.3s ease;
         }
+
+        .student-card:hover {
+            transform: translateY(-5px);
+            border-color: #3b82f6;
+        }
+
         .student-card img {
             width: 100%;
-            height: 180px;
+            height: 140px;
             object-fit: cover;
-            background-color: #eaeded;
+            background: #334155;
         }
+
         .student-info {
-            padding: 1rem;
+            padding: 0.75rem;
         }
+
         .student-info h3 {
-            font-size: 1.1rem;
-            color: #111827;
-            margin-bottom: 0.2rem;
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
+
         .student-info p {
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             color: #3b82f6;
             font-weight: bold;
         }
-        /* Tabel Jadwal */
+
+        /* Khusus Kartu Guru/Wali Kelas & Ketua */
+        .highlight-card {
+            max-width: 200px;
+            margin: 0 auto 1.5rem auto;
+            border: 2px solid #10b981 !important;
+        }
+        .leader-card {
+            border: 2px solid #3b82f6 !important;
+        }
+
+        /* Desain Aturan & Syarat */
+        .info-box {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        @media (min-width: 768px) {
+            .info-box { grid-template-columns: 1fr 1fr; }
+        }
+
+        .list-style {
+            padding-left: 1.2rem;
+        }
+        .list-style li {
+            margin-bottom: 0.6rem;
+            font-size: 0.95rem;
+        }
+        .text-red { color: #f87171; }
+        .text-green { color: #34d399; }
+
+        /* Tabel Jadwal Piket */
         .table-responsive {
             overflow-x: auto;
         }
@@ -104,27 +155,30 @@
             width: 100%;
             border-collapse: collapse;
             margin-top: 1rem;
-            font-size: 0.95rem;
+            background: rgba(15, 23, 42, 0.5);
         }
         th, td {
-            border: 1px solid #e5e7eb;
+            border: 1px solid rgba(255,255,255,0.1);
             padding: 12px;
             text-align: center;
+            font-size: 0.9rem;
+            vertical-align: top;
         }
         th {
             background-color: #1e3a8a;
-            color: white;
-            font-weight: 600;
+            color: #fff;
         }
-        tr:nth-child(even) {
-            background-color: #f8fafc;
+        tr:nth-child(even) td {
+            background: rgba(255,255,255,0.02);
         }
+
         footer {
-            background-color: #111827;
-            color: white;
             text-align: center;
-            padding: 1.5rem;
-            margin-top: 3rem;
+            padding: 2rem;
+            margin-top: 4rem;
+            background: rgba(15, 23, 42, 0.9);
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
         }
     </style>
 </head>
@@ -132,30 +186,41 @@
 
     <header>
         <h1>ANGKATAN 2024-2025</h1>
-        <p>Website Resmi, Profil, dan Informasi Kelas</p>
+        <p>Website Resmi & Pusat Informasi Anggota Kelas</p>
     </header>
 
     <div class="container">
 
-        <!-- SECTION TATA TERTIB -->
         <section>
-            <h2>Aturan & Tata Tertib Kelas</h2>
-            <ol class="rules-list">
-                <li>Hadir di kelas tepat waktu sebelum bel berbunyi.</li>
-                <li>Menggunakan seragam sekolah yang rapi, lengkap, dan sesuai hari.</li>
-                <li>Dilarang menggunakan HP saat jam pelajaran tanpa izin guru.</li>
-                <li>Menjaga kebersihan, ketertiban, dan kenyamanan kelas bersama.</li>
-                <li>Saling menghormati antar teman dan menghargai guru.</li>
-            </ol>
+            <h2>Papan Regulasi & Tata Tertib</h2>
+            <div class="info-box">
+                <div>
+                    <h3 class="text-green" style="margin-bottom:0.5rem;">✅ Syarat & Aturan Siswa</h3>
+                    <ul class="list-style">
+                        <li>Hadir di ruang kelas selambat-lambatnya 10 menit sebelum bel masuk.</li>
+                        <li>Membawa buku pelajaran dan alat tulis sesuai jadwal harian.</li>
+                        <li>Berpakaian rapi, atribut lengkap, dan seragam sesuai aturan sekolah.</li>
+                        <li>Menghormati guru, wali kelas, serta menghargai sesama teman.</li>
+                        <li>Wajib berpartisipasi menjaga fasilitas dan kebersihan kelas.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-red" style="margin-bottom:0.5rem;">❌ Larangan Keras</h3>
+                    <ul class="list-style">
+                        <li>Dilarang bermain HP atau bersosmed saat jam pelajaran tanpa seizin guru pengajar.</li>
+                        <li>Dilarang membuang sampah sembarangan (di laci meja/lantai kelas).</li>
+                        <li>Dilarang membuat kegaduhan atau berisik saat guru menjelaskan materi.</li>
+                        <li>Dilarang meninggalkan area kelas tanpa izin saat jam sekolah berlangsung.</li>
+                        <li>Dilarang merusak sarana kelas (mencoret meja, kursi, atau tembok).</li>
+                    </ul>
+                </div>
+            </div>
         </section>
 
-        <!-- SECTION STRUKTUR ORGANISASI -->
         <section>
-            <h2>Struktur Organisasi Kelas</h2>
+            <h2>Struktur Pengurus Kelas</h2>
             
-            <!-- Wali Kelas -->
-            <div class="student-card teacher-box">
-                <!-- GANTI "wali-kelas.jpg" dengan nama file foto Wali Kelas Anda jika sudah di-upload -->
+            <div class="student-card highlight-card">
                 <img src="wali-kelas.jpg" alt="Foto Wali Kelas">
                 <div class="student-info">
                     <h3>Nama Wali Kelas</h3>
@@ -163,11 +228,8 @@
                 </div>
             </div>
 
-            <!-- Grid Pengurus Kelas -->
-            <div class="student-grid">
-
-                <!-- KETUA KELAS (GORA) -->
-                <div class="student-card">
+            <div class="student-grid" style="justify-content: center;">
+                <div class="student-card leader-card">
                     <img src="ketua-kelas.jpg..jpg" alt="Foto Gora">
                     <div class="student-info">
                         <h3>Gora</h3>
@@ -175,9 +237,7 @@
                     </div>
                 </div>
 
-                <!-- WAKIL KETUA -->
                 <div class="student-card">
-                    <!-- GANTI "wakil.jpg" jika sudah ada fotonya -->
                     <img src="wakil.jpg" alt="Foto Wakil">
                     <div class="student-info">
                         <h3>Nama Wakil</h3>
@@ -185,32 +245,42 @@
                     </div>
                 </div>
 
-                <!-- SEKRETARIS -->
                 <div class="student-card">
-                    <!-- GANTI "sekretaris.jpg" jika sudah ada fotonya -->
-                    <img src="sekretaris.jpg" alt="Foto Sekretaris">
+                    <img src="sekretaris1.jpg" alt="Foto">
                     <div class="student-info">
-                        <h3>Nama Sekretaris</h3>
-                        <p>Sekretaris</p>
+                        <h3>Nama Sekr 1</h3>
+                        <p>Sekretaris 1</p>
                     </div>
                 </div>
 
-                <!-- BENDAHARA -->
                 <div class="student-card">
-                    <!-- GANTI "bendahara.jpg" jika sudah ada fotonya -->
-                    <img src="bendahara.jpg" alt="Foto Bendahara">
+                    <img src="sekretaris2.jpg" alt="Foto">
                     <div class="student-info">
-                        <h3>Nama Bendahara</h3>
-                        <p>Bendahara</p>
+                        <h3>Nama Sekr 2</h3>
+                        <p>Sekretaris 2</p>
                     </div>
                 </div>
 
+                <div class="student-card">
+                    <img src="bendahara1.jpg" alt="Foto">
+                    <div class="student-info">
+                        <h3>Nama Bend 1</h3>
+                        <p>Bendahara 1</p>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <img src="bendahara2.jpg" alt="Foto">
+                    <div class="student-info">
+                        <h3>Nama Bend 2</h3>
+                        <p>Bendahara 2</p>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- SECTION JADWAL MAPEL -->
         <section>
-            <h2>Jadwal Pelajaran</h2>
+            <h2>Jadwal Piket Kebersihan Kelas</h2>
             <div class="table-responsive">
                 <table>
                     <thead>
@@ -224,55 +294,60 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Upacara<br>Matematika</td>
-                            <td>Bahasa Indonesia<br>Fisika</td>
-                            <td>Kimia<br>Sejarah</td>
-                            <td>Biologi<br>Bahasa Inggris</td>
-                            <td>Olahraga<br>Agama</td>
-                        </tr>
-                        <tr>
-                            <td>PPKn</td>
-                            <td>Seni Budaya</td>
-                            <td>Geografi</td>
-                            <td>Sosiologi</td>
-                            <td>Prakarya</td>
+                            <td>Roni<br>Owen<br>Moses<br>Aldo<br>Rafi<br>Arjuna</td>
+                            <td>Dodi<br>Frans<br>Rio<br>Anggun<br>Nayla<br>Salsa (1)</td>
+                            <td>Cintia<br>Anita<br>Nusaibah<br>Citra<br>Jessica<br>Angelita<br>Luna</td>
+                            <td>Cahaya<br>Tatap<br>Zahra<br>Winda<br>Feza<br>Novi<br>Dini</td>
+                            <td>Kiara<br>Laura<br>Rahma<br>Mysel<br>Dinda<br>Salsa (2)<br><strong>Gora</strong></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </section>
 
-        <!-- SECTION JADWAL PIKET -->
         <section>
-            <h2>Jadwal Piket Kebersihan</h2>
-            <div class="table-responsive">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Senin</th>
-                            <th>Selasa</th>
-                            <th>Rabu</th>
-                            <th>Kamis</th>
-                            <th>Jumat</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Murid A<br>Murid B<br>Murid C</td>
-                            <td>Murid D<br>Murid E<br>Murid F</td>
-                            <td>Murid G<br>Murid H<br>Murid I</td>
-                            <td>Murid J<br>Murid K<br>Murid L</td>
-                            <td>Murid M<br>Murid N<br>Murid O</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <h2>Daftar Anggota Kelas (33 Murid)</h2>
+            <div class="student-grid">
+                <div class="student-card"><img src="ketua-kelas.jpg..jpg"><div class="student-info"><h3>Gora</h3><p>Murid</p></div></div>
+                <div class="student-card"><img src="avatar.jpg"><div class="student-info"><h3>Roni</h3><p>Murid</p></div></div>
+                <div class="student-card"><img src="avatar.jpg"><div class="student-info"><h3>Owen</h3><p>Murid</p></div></div>
+                <div class="student-card"><img src="avatar.jpg"><div class="student-info"><h3>Moses</h3><p>Murid</p></div></div>
+                <div class="student-card"><img src="avatar.jpg"><div class="student-info"><h3>Aldo</h3><p>Murid</p></div></div>
+                <div class="student-card"><img src="avatar.jpg"><div class="student-info"><h3>Rafi</h3><p>Murid</p></div></div>
+                <div class="student-card"><img src="avatar.jpg"><div class="student-info"><h3>Arjuna</h3><p>Murid</p></div></div>
+                <div class="student-card"><img src="avatar.jpg"><div class="student-info"><h3>Dodi</h3><p>Murid</p></div></div>
+                <div class="student-card"><img src="avatar.jpg"><div class="student-info"><h3>Frans</h3><p>Murid</p></div></div>
+                <div class="student-card"><img src="avatar.jpg"><div class="student-info"><h3>Rio</h3><p>Murid</p></div></div>
+                <div class="student-card"><img src="avatar.jpg"><div class="student-info"><h3>Anggun</h3><p>Murid</p></div></div>
+                <div class="student-card"><img src="avatar.jpg"><div class="student-info"><h3>Nayla</h3><p>Murid</p></div></div>
+                <div class="student-card"><img src="avatar.jpg"><div class="student-info"><h3>Salsa 1</h3><p>Murid</p></div></div>
+                <div class="student-card"><img src="avatar.jpg"><div class="student-info"><h3>Cintia</h3><p>Murid</p></div></div>
+                <div class="student-card"><img src="avatar.jpg"><div class="student-info"><h3>Anita</h3><p>Murid</p></div></div>
+                <div class="student-card"><img src="avatar.jpg"><div class="student-info"><h3>Nusaibah</h3><p>Murid</p></div></div>
+                <div class="student-card"><img src="avatar.jpg"><div class="student-info"><h3>Citra</h3><p>Murid</p></div></div>
+                <div class="student-card"><img src="avatar.jpg"><div class="student-info"><h3>Jessica</h3><p>Murid</p></div></div>
+                <div class="student-card"><img src="avatar.jpg"><div class="student-info"><h3>Angelita</h3><p>Murid</p></div></div>
+                <div class="student-card"><img src="avatar.jpg"><div class="student-info"><h3>Luna</h3><p>Murid</p></div></div>
+                <div class="student-card"><img src="avatar.jpg"><div class="student-info"><h3>Cahaya</h3><p>Murid</p></div></div>
+                <div class="student-card"><img src="avatar.jpg"><div class="student-info"><h3>Tatap</h3><p>Murid</p></div></div>
+                <div class="student-card"><img src="avatar.jpg"><div class="student-info"><h3>Zahra</h3><p>Murid</p></div></div>
+                <div class="student-card"><img src="avatar.jpg"><div class="student-info"><h3>Winda</h3><p>Murid</p></div></div>
+                <div class="student-card"><img src="avatar.jpg"><div class="student-info"><h3>Feza</h3><p>Murid</p></div></div>
+                <div class="student-card"><img src="avatar.jpg"><div class="student-info"><h3>Novi</h3><p>Murid</p></div></div>
+                <div class="student-card"><img src="avatar.jpg"><div class="student-info"><h3>Dini</h3><p>Murid</p></div></div>
+                <div class="student-card"><img src="avatar.jpg"><div class="student-info"><h3>Kiara</h3><p>Murid</p></div></div>
+                <div class="student-card"><img src="avatar.jpg"><div class="student-info"><h3>Laura</h3><p>Murid</p></div></div>
+                <div class="student-card"><img src="avatar.jpg"><div class="student-info"><h3>Rahma</h3><p>Murid</p></div></div>
+                <div class="student-card"><img src="avatar.jpg"><div class="student-info"><h3>Mysel</h3><p>Murid</p></div></div>
+                <div class="student-card"><img src="avatar.jpg"><div class="student-info"><h3>Dinda</h3><p>Murid</p></div></div>
+                <div class="student-card"><img src="avatar.jpg"><div class="student-info"><h3>Salsa 2</h3><p>Murid</p></div></div>
             </div>
         </section>
 
     </div>
 
     <footer>
-        <p>&copy; 2026 Angkatan 2024-2025. All Rights Reserved.</p>
+        <p>&copy; 2026 Angkatan 2024-2025. Official Class Website. All Rights Reserved.</p>
     </footer>
 
 </body>
